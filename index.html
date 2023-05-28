@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <title>Image Uploader</title>
+    
+    
+    <link rel="stylesheet" href="res/bootstrap@5.2.0.min.css">
+    <link rel="stylesheet" href="res/chartist.min.css">
+    
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    
+    
+    
+    
+    <!--Css start-->
+    
+    <style>
+    
+    body{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background: #f3f0ff;
+      font-family: 'poppins';
+      height: 100vh;
+      width: 100%;
+    }
+
+    .main_page{
+      height: 100vh;
+      width: 100%;
+      background: #f3f0ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    
+    .card_body{
+      height: 680px;
+      width: 700px;
+      background: #f3f0ff;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      
+    }
+    
+    .card_body h4{
+      font-size: 50px;
+      color: #555;
+      font-weight: bold;
+    }
+    .card_body p{
+      font-size: 30px;
+      color: #555;
+      margin-top: -10px;
+    }
+    
+    .card_body img{
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      outline: none;
+      padding: 10px;
+      border: 10px solid #F25C54;
+    }
+    
+    
+    .card_body input{
+      margin-top: 20px;
+      display: none;
+    }
+    
+    
+    .card_body label{
+      margin-top: 50px;
+      padding: 30px 50px;
+      border: none;
+      background: #F25C54;
+      color: #fff;
+      font-size: 30px;
+      border-radius: 10px;
+    }
+    
+    
+    .card_body label:hover{
+      background: mediumpurple;
+      color: #fff;
+    }
+    
+    </style>
+    
+    <!--Css end-->
+    
+   
+</head>
+<body>
+   
+   <div class="main_page">
+     <div class="shadow card_body rounded-3 container">
+        <h4 class="mt-3">Image Uploader</h4>
+        <p class="mb-3">@mdrohan</p>
+       
+        <img src="default_profile_pic.jpg" class="mt-5" id="profile_pic">
+        
+        <label for="input_files">Upload Image</label>
+        
+        <input type="file" accept="image/jpg image/png image/jpeg" id="input_files">
+       
+     </div>
+   </div>
+   
+   
+   
+   
+</body>
+
+
+
+
+  <!--javascript start-->
+  
+  <script>
+    var profile_pic = document.getElementById("profile_pic");
+    
+    var input_files = document.getElementById("input_files");
+    
+    input_files.onchange = function(){
+      profile_pic.src = URL.createObjectURL(input_files.files[0])
+    }
+    
+  </script>
+
+    <!--javascript end-->
+
+
+</html>
